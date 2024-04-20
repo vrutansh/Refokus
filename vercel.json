@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.html",
+      "use": "@vercel/static-build",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "src/assets/**/*",
+      "use": "@vercel/static-build",
+      "config": { "zeroConfig": true }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/index.html"
+    }
+  ]
+}
