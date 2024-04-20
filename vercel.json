@@ -2,13 +2,13 @@
   "version": 2,
   "builds": [
     {
-      "src": "build",
+      "src": "src/App.jsx",
       "use": "@vercel/static-build"
     }
   ],
   "routes": [
-    { "src": "/(.*\\.(json|ico))", "headers": { "Cache-Control": "s-maxage=1, stale-while-revalidate" }, "dest": "/build/$1" },
-    { "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|otf|eot))", "headers": { "Cache-Control": "s-maxage=31536000, immutable" }, "dest": "/build/$1" },
-    { "src": "/(.*)", "headers": { "Cache-Control": "s-maxage=0" }, "dest": "/build/index.html" }
+    { "src": "/(.*\\.(json|ico))", "headers": { "Cache-Control": "s-maxage=1, stale-while-revalidate" }, "dest": "/src/$1" },
+    { "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|otf|eot))", "headers": { "Cache-Control": "s-maxage=31536000, immutable" }, "dest": "/src/$1" },
+    { "src": "/(.*)", "headers": { "Cache-Control": "s-maxage=0" }, "dest": "/src/index.html" }
   ]
 }
